@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #f4f6f9;
+  --text: #111827;
+  --primary: #2563eb;
+  --card: #ffffff;
+}
+
+body.dark {
+  --bg: #0f172a;
+  --text: #f1f5f9;
+  --primary: #60a5fa;
+  --card: #1e293b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s ease;
+}
+
+/* ===== HEADER ===== */
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+}
+
+body.dark header {
+  background: rgba(15,23,42,0.95);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo img {
+  height: 100px;
+  display: block;
+}
+
+/* NAV */
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.nav-links li a:hover {
+  color: var(--primary);
+}
+
+/* DARK MODE BUTTON */
+.dark-btn {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* MAIN */
+main {
+  padding: 150px 30px 60px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.card {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .logo img {
+    height: 75px;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 90px;
+    right: -250px;
+    flex-direction: column;
+    background: var(--card);
+    width: 220px;
+    padding: 20px;
+    gap: 15px;
+    transition: 0.3s;
+    height: auto;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  main {
+    padding: 130px 20px 50px;
+  }
+
+}
